@@ -40,3 +40,9 @@ celerybeat-schedule
 venv/
 .env/
 **/venv/*
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/poblem-solving.iml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
