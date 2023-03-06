@@ -1,4 +1,5 @@
 """https://leetcode.com/problems/3sum/"""
+from decorators import measure_execution_time
 
 
 class Solution:
@@ -33,13 +34,12 @@ class Solution:
         return res
 
 
-import time
+@measure_execution_time
+def main():
+    in_val = [-1, 0, 1, 2, -1, -4]
+    print(Solution().threeSum(in_val))
+    print([[-1, -1, 2], [-1, 0, 1]])
 
-start_time = time.time()
 
-in_val = [-1,0,1,2,-1,-4]
-
-print(Solution().threeSum(in_val))
-print([[-1, -1, 2], [-1, 0, 1]])
-
-print("--- %s seconds ---" % (time.time() - start_time))
+if __name__ == '__main__':
+    main()

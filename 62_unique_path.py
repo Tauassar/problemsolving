@@ -1,3 +1,6 @@
+from decorators import measure_execution_time
+
+
 class Solution:
     cache = {}
 
@@ -43,5 +46,11 @@ class Solution:
         return sol
 
 
-print(Solution().uniquePaths(m = 3, n = 7))
-print(28)
+@measure_execution_time
+def main():
+    print(Solution().uniquePaths(m=3, n=7))
+    print(28)
+
+
+if __name__ == '__main__':
+    main()

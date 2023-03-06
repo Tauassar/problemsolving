@@ -1,5 +1,7 @@
 from typing import List
 
+from decorators import measure_execution_time
+
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
@@ -47,7 +49,12 @@ class Solution:
         return max_sum
 
 
-res = Solution().maxSubArray([5,4,-1,7,8])
+@measure_execution_time
+def main():
+    res = Solution().maxSubArray([5, 4, -1, 7, 8])
+    print(f'Expected: {6}')
+    print(f'Received {res}')
 
-print(f'Expected: {6}')
-print(f'Received {res}')
+
+if __name__ == '__main__':
+    main()

@@ -1,6 +1,8 @@
 """https://leetcode.com/problems/container-with-most-water/submissions/909706766/"""
 from typing import List
 
+from decorators import measure_execution_time
+
 
 class Solution:
     @staticmethod
@@ -30,12 +32,13 @@ class Solution:
 
         return max_vol
 
-import time
 
-start_time = time.time()
+@measure_execution_time
+def main():
+    in_val = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+    print(Solution().maxArea(in_val))
+    print(49)
 
-in_val = [1,8,6,2,5,4,8,3,7]
-print(Solution().maxArea(in_val))
-print(49)
 
-print("--- %s seconds ---" % (time.time() - start_time))
+if __name__ == '__main__':
+    main()

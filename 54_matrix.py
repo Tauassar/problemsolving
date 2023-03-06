@@ -1,5 +1,7 @@
 from typing import List
 
+from decorators import measure_execution_time
+
 
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
@@ -19,7 +21,13 @@ class Solution:
         return output
 
 
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
-res = Solution().spiralOrder(matrix=matrix)
-print(res)
-print([1,2,3,6,9,8,7,4,5])
+@measure_execution_time
+def main():
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    res = Solution().spiralOrder(matrix=matrix)
+    print(res)
+    print([1, 2, 3, 6, 9, 8, 7, 4, 5])
+
+
+if __name__ == '__main__':
+    main()

@@ -1,5 +1,7 @@
 from typing import List
 
+from decorators import measure_execution_time
+
 
 class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
@@ -26,5 +28,11 @@ class Solution:
         return sum_grid[-1][-1]
 
 
-print(Solution().minPathSum([[1,2,3],[4,5,6]]))
-print(7)
+@measure_execution_time
+def main():
+    print(Solution().minPathSum([[1, 2, 3], [4, 5, 6]]))
+    print(7)
+
+
+if __name__ == '__main__':
+    main()

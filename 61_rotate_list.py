@@ -1,5 +1,7 @@
 from typing import Optional
 
+from decorators import measure_execution_time
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -50,11 +52,17 @@ class Solution:
         return rotate_list[0]
 
 
-vals = []
-for i in [1,2,3][::-1]:
-    prev = None if not len(vals) else vals[-1]
-    vals.append(ListNode(i, prev))
+@measure_execution_time
+def main():
+    vals = []
+    for i in [1, 2, 3][::-1]:
+        prev = None if not len(vals) else vals[-1]
+        vals.append(ListNode(i, prev))
 
-print([i.val for i in vals[::-1]])
+    print([i.val for i in vals[::-1]])
 
-print(Solution().rotateRight(vals[-1], 2000000000))
+    print(Solution().rotateRight(vals[-1], 2000000000))
+
+
+if __name__ == '__main__':
+    main()
